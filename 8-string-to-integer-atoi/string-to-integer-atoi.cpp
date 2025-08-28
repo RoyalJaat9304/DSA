@@ -5,7 +5,7 @@ public:
         long long ans=0;
 
         while(s[i] == ' ')
-        s.erase(s.begin());
+        i++;
         
         bool sign=false;
         if(s[i] == '-'){
@@ -14,8 +14,6 @@ public:
         }
         else if(s[i] == '+')
             i++;
-        else
-        i=0;
 
         while(isdigit(s[i]) && i<s.size()){
             ans=ans*10 + (s[i]-'0');

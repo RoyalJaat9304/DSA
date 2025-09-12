@@ -1,9 +1,13 @@
 class Solution {
 public:
     int shortestPathBinaryMatrix(vector<vector<int>>& grid) {
-        if(grid[0][0] == 1)return -1;
         int n=grid.size();
-        if(n==1)return 1;
+        if(grid[0][0] == 1 || grid[n-1][n-1] == 1)
+        return -1;
+
+        if(n==1)
+        return 1;
+        
         int ans=INT_MAX;
         queue<pair<int,pair<int,int>>>q;
         vector<vector<int>>dist(n,vector<int>(n,INT_MAX));

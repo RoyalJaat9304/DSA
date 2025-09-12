@@ -21,7 +21,7 @@ public:
             int node=p.second.second;
             int d=p.second.first;
             
-            if(stop>k)continue;
+            if(stop>k || node==dst)continue;
 
             for(auto it:adj[node]){
                 int wt=it.second;

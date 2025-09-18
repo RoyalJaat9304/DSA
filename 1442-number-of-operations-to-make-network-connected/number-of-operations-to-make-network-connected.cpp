@@ -44,23 +44,19 @@ class DisJointSet{
 class Solution {
 public:
     int makeConnected(int n, vector<vector<int>>& connections) {
+        if(connections.size() < n-1)return -1;
         DisJointSet ds(n);
         int cnt=0;
         for(auto it:connections){
             int u=it[0];
             int v=it[1];
-            if(ds.findUPar(u) == ds.findUPar(v))
-            cnt++;
-            else{
-                ds.unionByRank(u,v);
-            }
+            ds.unionByRank(u,v);
         }
         int component=0;
         for(int it=0;it<n;it++){
             if(ds.parent[it] == it)
             component++;
         }
-        if(component-1 <= cnt)return component-1;
-        return -1;
+        return component-1;
     }
 };

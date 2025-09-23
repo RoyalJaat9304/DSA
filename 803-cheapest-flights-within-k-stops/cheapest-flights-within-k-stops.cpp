@@ -27,7 +27,7 @@ public:
                 int wt=it.second;
                 int nn=it.first;
                 int newd=d+wt;
-                if(dist[nn] > newd && stop <= k){
+                if(dist[nn] > newd){
                     dist[nn] = newd;
                     q.push({stop+1,{newd,nn}});
                 }
